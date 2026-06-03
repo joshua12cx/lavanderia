@@ -10,7 +10,7 @@
   :root {
     --navy: #1ab8cc;
     --navy-mid: #1a4a55;
-    --celeste: #7ff7ff;
+    --celeste: #a8eef5;
     --celeste-mid: #1a9aaa;
     --cream: #e0fbfc;
     --cream-dark: #c8f6f8;
@@ -43,7 +43,7 @@
   .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: all 0.3s; }
 
   /* HERO */
-  .hero { min-height: 100vh; background: #7ff7ff; display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; }
+  .hero { min-height: 100vh; background: #a8eef5; display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(127,247,255,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); }
   .hero-grid { position: absolute; inset: 0; opacity: 0.03; background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px); background-size: 60px 60px; }
   .hero-content { position: relative; z-index: 2; flex: 1; max-width: 600px; animation: fadeUp 1s ease both; }
@@ -58,12 +58,12 @@
     z-index: 1;
     pointer-events: none;
     border-radius: 50%;
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
   }
   @media (max-width: 768px) {
     .hero-logo-bg { width: 85%; opacity: 0.2; }
   }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(127,247,255,0.1); border: 1px solid rgba(127,247,255,0.3); padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #7ff7ff; font-weight: 500; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(127,247,255,0.1); border: 1px solid rgba(127,247,255,0.3); padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a8eef5; font-weight: 500; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: #0a505a; border-radius: 50%; animation: pulse 2s ease infinite; }
   .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--white); margin-bottom: 0.3em; }
   .hero h1 em { font-style: italic; color: var(--gold); display: block; }
@@ -101,12 +101,12 @@
   .testimonials-section .divider { background: #0a505a; }
 
   /* PROMO */
-  .promo-banner { background: #7ff7ff; padding: 1.2rem 5%; text-align: center; }
+  .promo-banner { background: #a8eef5; padding: 1.2rem 5%; text-align: center; }
   .promo-banner p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: #1ab8cc; letter-spacing: 0.04em; }
   .promo-banner span { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
   /* WHY */
-  .why-section { background: #7ff7ff; position: relative; overflow: hidden; }
+  .why-section { background: #a8eef5; position: relative; overflow: hidden; }
   .why-section::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: radial-gradient(ellipse at right, rgba(127,247,255,0.08) 0%, transparent 70%); }
   .why-section .section-title { color: var(--white); }
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; position: relative; z-index: 2; }
@@ -119,13 +119,13 @@
   .why-card p { font-size: 0.85rem; color: rgba(10,80,90,0.75); line-height: 1.7; }
 
   /* MISION Y VISION */
-  .mv-section { background: #7ff7ff; position: relative; overflow: hidden; }
+  .mv-section { background: #a8eef5; position: relative; overflow: hidden; }
   .mv-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 30% 50%, rgba(127,247,255,0.06) 0%, transparent 70%); }
   .mv-section .section-title { color: var(--white); }
   .mv-section .section-tag { color: var(--gold); }
   .mv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; position: relative; z-index: 2; }
   .mv-card { background: rgba(255,255,255,0.25); border: 1px solid rgba(10,80,90,0.2); border-radius: 2px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: border-color 0.3s, background 0.3s; }
-  .mv-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #7ff7ff; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+  .mv-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #a8eef5; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
   .mv-card:hover { border-color: rgba(10,80,90,0.4); background: rgba(255,255,255,0.4); }
   .mv-card:hover::after { transform: scaleX(1); }
   .mv-icon-wrap { width: 52px; height: 52px; background: rgba(10,80,90,0.1); border: 1px solid rgba(10,80,90,0.25); border-radius: 2px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
@@ -178,7 +178,7 @@
   .payment-card p { font-size: 0.78rem; color: var(--text-muted); }
 
   /* TESTIMONIALS */
-  .testimonials-section { background: #7ff7ff; }
+  .testimonials-section { background: #a8eef5; }
   .testimonials-section .section-title { color: var(--white); }
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .testimonial-card { background: rgba(255,255,255,0.25); border: 1px solid rgba(10,80,90,0.15); padding: 2rem; border-radius: 2px; position: relative; }
@@ -220,7 +220,7 @@
   .contact-link:hover { border-color: #1a9aaa; background: rgba(26,154,170,0.05); }
 
   /* FOOTER */
-  footer { background: #7ff7ff; padding: 3rem 5% 2rem; border-top: 1px solid rgba(127,247,255,0.2); }
+  footer { background: #a8eef5; padding: 3rem 5% 2rem; border-top: 1px solid rgba(127,247,255,0.2); }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
   .footer-brand p { font-size: 0.82rem; color: rgba(10,80,90,0.7); line-height: 1.7; max-width: 280px; margin-top: 0.8rem; }
   .footer-col h5 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #0a505a; margin-bottom: 1rem; font-weight: 500; }
@@ -230,7 +230,7 @@
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
   .footer-bottom p { font-size: 0.75rem; color: rgba(10,80,90,0.5); }
   .footer-ods { display: flex; gap: 0.5rem; }
-  .ods-badge { background: rgba(10,80,90,0.1); border: 1px solid rgba(10,80,90,0.25); color: #7ff7ff; font-size: 0.65rem; padding: 0.2rem 0.6rem; border-radius: 2px; letter-spacing: 0.06em; }
+  .ods-badge { background: rgba(10,80,90,0.1); border: 1px solid rgba(10,80,90,0.25); color: #a8eef5; font-size: 0.65rem; padding: 0.2rem 0.6rem; border-radius: 2px; letter-spacing: 0.06em; }
 
   /* WHATSAPP */
   .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.3s, box-shadow 0.3s; animation: fadeUp 1s 1s ease both; }
