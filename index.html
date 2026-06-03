@@ -43,10 +43,59 @@
   .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: all 0.3s; }
 
   /* HERO */
-  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); }
+  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; gap: 3rem; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(126,200,227,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); }
   .hero-grid { position: absolute; inset: 0; opacity: 0.03; background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px); background-size: 60px 60px; }
-  .hero-content { position: relative; z-index: 2; max-width: 680px; animation: fadeUp 1s ease both; }
+  .hero-content { position: relative; z-index: 2; flex: 1; max-width: 600px; animation: fadeUp 1s ease both; }
+
+  /* LOGO HERO */
+  .hero-logo-wrap {
+    position: relative; z-index: 2;
+    flex-shrink: 0;
+    width: 320px;
+    display: flex; align-items: center; justify-content: center;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-logo-glow {
+    position: relative;
+    width: 300px; height: 300px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(126,200,227,0.15) 0%, rgba(26,80,120,0.25) 50%, transparent 75%);
+    box-shadow:
+      0 0 60px rgba(126,200,227,0.2),
+      0 0 120px rgba(126,200,227,0.08),
+      inset 0 0 60px rgba(126,200,227,0.05);
+  }
+  .hero-logo-glow::before {
+    content: '';
+    position: absolute; inset: -2px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, rgba(126,200,227,0.3), rgba(201,168,76,0.15), rgba(126,200,227,0.3), rgba(30,100,160,0.2), rgba(126,200,227,0.3));
+    animation: rotateBorder 8s linear infinite;
+    mask: radial-gradient(farthest-side, transparent calc(100% - 2px), white calc(100% - 1px));
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), white calc(100% - 1px));
+  }
+  .hero-logo-glow::after {
+    content: '';
+    position: absolute; inset: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(126,200,227,0.15);
+  }
+  .hero-logo-img {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 0 20px rgba(126,200,227,0.4)) drop-shadow(0 0 40px rgba(126,200,227,0.15));
+    animation: floatLogo 4s ease-in-out infinite;
+  }
+  @keyframes rotateBorder { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes floatLogo { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+  @media (max-width: 900px) {
+    .hero-logo-wrap { display: none; }
+  }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s ease infinite; }
   .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--white); margin-bottom: 0.3em; }
@@ -276,6 +325,11 @@
     <div class="hero-actions">
       <a href="https://wa.me/51999999999?text=Hola,%20me%20gustaría%20consultar%20sobre%20sus%20servicios" target="_blank" class="btn-primary">Escribir por WhatsApp</a>
       <a href="#servicios" class="btn-outline">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-logo-wrap">
+    <div class="hero-logo-glow">
+      <img src="logo.png" alt="Lavandería Fortaleza" class="hero-logo-img">
     </div>
   </div>
   <div class="hero-stats">
