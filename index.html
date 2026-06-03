@@ -53,14 +53,15 @@
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%; max-width: 800px;
-    opacity: 0.07;
+    width: 65%; max-width: 750px;
+    opacity: 0.1;
     z-index: 1;
     pointer-events: none;
-    filter: grayscale(20%);
+    mix-blend-mode: luminosity;
+    filter: grayscale(100%);
   }
   @media (max-width: 768px) {
-    .hero-logo-bg { width: 95%; opacity: 0.05; }
+    .hero-logo-bg { width: 90%; opacity: 0.07; }
   }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s ease infinite; }
