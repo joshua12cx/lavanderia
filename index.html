@@ -25,60 +25,81 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.2rem 5%;
+    padding: 0.8rem 5%;
     display: flex; align-items: center; justify-content: space-between;
-    background: rgba(26,184,204,0.97);
+    background: rgba(26,154,170,0.97);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(127,247,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     transition: padding 0.3s;
   }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #0a505a; letter-spacing: 0.05em; text-decoration: none; }
-  .nav-logo span { color: #0a505a; font-weight: 300; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: rgba(10,80,90,0.9); text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
-  .nav-links a:hover { color: #0a505a; }
-  .nav-cta { background: #0a505a !important; color: #e0fbfc !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 500 !important; }
-  .nav-cta:hover { background: #0d6b7a !important; }
+  .nav-logo-img { height: 54px; width: auto; object-fit: contain; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: #ffffff; }
+  .nav-cta { background: #ffffff !important; color: #1a9aaa !important; padding: 0.55rem 1.4rem; border-radius: 6px; font-weight: 600 !important; display: flex !important; align-items: center !important; gap: 6px !important; }
+  .nav-cta:hover { background: #e0fbfc !important; color: #1a9aaa !important; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-  .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: all 0.3s; }
+  .hamburger span { width: 24px; height: 2px; background: #ffffff; display: block; transition: all 0.3s; }
 
   /* HERO */
-  .hero { min-height: 100vh; background: #a8eef5; display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(127,247,255,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); }
-  .hero-grid { position: absolute; inset: 0; opacity: 0.03; background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px); background-size: 60px 60px; }
-  .hero-content { position: relative; z-index: 2; flex: 1; max-width: 600px; animation: fadeUp 1s ease both; }
-
-  /* LOGO FONDO */
-  .hero-logo-bg {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%; max-width: 700px;
-    opacity: 0.28;
-    z-index: 1;
-    pointer-events: none;
+  .hero {
+    min-height: 100vh; background: #ffffff;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden; padding: 6rem 5% 0;
+  }
+  .hero-main { display: flex; align-items: center; gap: 3rem; flex: 1; padding-bottom: 2rem; }
+  .hero-content { position: relative; z-index: 2; flex: 1; animation: fadeUp 1s ease both; }
+  .hero-image-wrap {
+    flex: 1; position: relative; z-index: 2;
+    border-radius: 16px; overflow: hidden;
+    max-width: 520px; min-height: 420px;
+    animation: fadeUp 1s 0.2s ease both;
+    box-shadow: 0 20px 60px rgba(26,154,170,0.15);
+  }
+  .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-logo-corner {
+    position: absolute; top: 16px; right: 16px; z-index: 3;
+    width: 110px; height: 110px;
     border-radius: 50%;
-    mix-blend-mode: multiply;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    display: flex; align-items: center; justify-content: center;
+    padding: 8px;
   }
-  @media (max-width: 768px) {
-    .hero-logo-bg { width: 85%; opacity: 0.2; }
+  .hero-logo-corner img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+  .hero h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 700; line-height: 1.15;
+    color: #1a2e35; margin-bottom: 0.4em;
   }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(127,247,255,0.1); border: 1px solid rgba(127,247,255,0.3); padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a8eef5; font-weight: 500; }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; background: #0a505a; border-radius: 50%; animation: pulse 2s ease infinite; }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--white); margin-bottom: 0.3em; }
-  .hero h1 em { font-style: italic; color: var(--gold); display: block; }
-  .hero-sub { font-size: 1rem; color: rgba(10,80,90,0.8); line-height: 1.7; margin-bottom: 2.5rem; max-width: 480px; font-weight: 300; }
+  .hero h1 em { font-style: normal; color: #1a9aaa; display: block; }
+  .hero-divider { width: 48px; height: 3px; background: #1a9aaa; border-radius: 2px; margin-bottom: 1.2rem; }
+  .hero-sub { font-size: 0.95rem; color: #4a6a72; line-height: 1.75; margin-bottom: 2rem; max-width: 440px; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { background: #1a9aaa; color: #e0fbfc; padding: 0.9rem 2rem; border-radius: 2px; text-decoration: none; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.3s, transform 0.2s; display: inline-block; }
-  .btn-primary:hover { background: #2ab8cc; transform: translateY(-1px); }
-  .btn-outline { border: 1px solid rgba(10,80,90,0.4); color: rgba(10,80,90,0.8); padding: 0.9rem 2rem; border-radius: 2px; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: border-color 0.3s, color 0.3s; display: inline-block; }
-  .btn-outline:hover { border-color: #0a505a; color: #0a505a; }
-  .hero-stats { position: absolute; right: 5%; bottom: 10%; display: flex; flex-direction: column; gap: 1.5rem; z-index: 2; animation: fadeUp 1s 0.3s ease both; }
-  .stat-item { text-align: right; border-right: 2px solid rgba(10,80,90,0.3); padding-right: 1.2rem; }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: #0a505a; line-height: 1; }
-  .stat-label { font-size: 0.72rem; color: rgba(10,80,90,0.65); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
-  .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(10,80,90,0.5); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; z-index: 2; animation: fadeUp 1s 0.6s ease both; }
-  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(10,80,90,0.5), transparent); animation: scrollDown 2s ease infinite; }
+  .btn-primary { background: #1a9aaa; color: #ffffff; padding: 0.85rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.88rem; letter-spacing: 0.04em; transition: background 0.3s, transform 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: #158090; transform: translateY(-1px); }
+  .btn-outline { border: 2px solid #1a9aaa; color: #1a9aaa; padding: 0.85rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.3s; display: inline-block; }
+  .btn-outline:hover { background: #1a9aaa; color: white; }
+
+  /* STATS BAR */
+  .hero-stats-bar {
+    background: #f4fdfe; border-top: 1px solid #d0f0f5;
+    padding: 1.4rem 0; display: flex; gap: 0;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .stat-item {
+    flex: 1; display: flex; align-items: center; gap: 12px;
+    padding: 0 2rem; border-right: 1px solid #d0f0f5;
+    text-align: left;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .stat-num { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a2e35; line-height: 1.2; }
+  .stat-label { font-size: 0.75rem; color: #4a6a72; line-height: 1.4; }
+  .hero-scroll { display: none; }
+  .hero-grid { display: none; }
+  .hero-logo-bg { display: none; }
 
   /* SECTIONS */
   section { padding: 6rem 5%; }
@@ -253,8 +274,11 @@
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .hero-stats { display: none; }
-    .hero h1 { font-size: 2.8rem; }
+    .hero-main { flex-direction: column; }
+    .hero-image-wrap { max-width: 100%; min-height: 260px; }
+    .hero-stats-bar { flex-wrap: wrap; }
+    .stat-item { flex: 1 1 45%; border-right: none; border-bottom: 1px solid #d0f0f5; }
+    .hero h1 { font-size: 2rem; }
     .location-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .step-arrow { display: none; }
@@ -268,13 +292,13 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#inicio" class="nav-logo">Fortaleza <span>Lavandería</span></a>
+  <a href="#inicio"><img src="logo.png" class="nav-logo-img" alt="Lavandería Fortaleza"></a>
   <ul class="nav-links">
     <li><a href="#mision">Nosotros</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#precios">Precios</a></li>
     <li><a href="#ubicacion">Ubicación</a></li>
-    <li><a href="#contacto" class="nav-cta">Contáctanos</a></li>
+    <li><a href="https://wa.me/51988750647?text=Hola,%20me%20gustaría%20consultar%20sobre%20sus%20servicios" target="_blank" class="nav-cta">💬 Contáctanos</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="openMenu()">
     <span></span><span></span><span></span>
@@ -294,22 +318,42 @@
 <!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-grid"></div>
-  <img src="logo.png" alt="" class="hero-logo-bg">
-  <div class="hero-content">
-    <div class="hero-badge">Ate, Lima — Desde 2021</div>
-    <h1>Ropa impecable,<em>siempre lista.</em></h1>
-    <p class="hero-sub">Lavado, secado y planchado profesional para prendas, frazadas, edredones y tapizados. Maquinaria moderna, precios accesibles y empresa formalizada.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/51988750647?text=Hola,%20me%20gustaría%20consultar%20sobre%20sus%20servicios" target="_blank" class="btn-primary">Escribir por WhatsApp</a>
-      <a href="#servicios" class="btn-outline">Ver servicios</a>
+  <div class="hero-main">
+    <div class="hero-content">
+      <h1>Tu ropa limpia,<br>fresca y lista<em>cuando la necesites</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Lavado, secado y planchado profesional para prendas, frazadas, edredones y ropa delicada. Cuidado impecable y entrega a tiempo.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/51988750647?text=Hola,%20me%20gustaría%20consultar%20sobre%20sus%20servicios" target="_blank" class="btn-primary">💬 Escribir por WhatsApp</a>
+        <a href="#servicios" class="btn-outline">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=80" alt="Ropa limpia y ordenada">
+      <div class="hero-logo-corner">
+        <img src="logo.png" alt="Lavandería Fortaleza">
+      </div>
     </div>
   </div>
-  <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">3+</div><div class="stat-label">Años de experiencia</div></div>
-    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Empresa formalizada</div></div>
-    <div class="stat-item"><div class="stat-num">4h</div><div class="stat-label">Entrega mínima</div></div>
+  <div class="hero-stats-bar">
+    <div class="stat-item">
+      <span class="stat-icon">⭐</span>
+      <div><div class="stat-num">3+ Años</div><div class="stat-label">de experiencia<br>Comprometidos con la calidad</div></div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">✅</span>
+      <div><div class="stat-num">100%</div><div class="stat-label">Empresa formalizada<br>Servicio confiable y profesional</div></div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">⚡</span>
+      <div><div class="stat-num">Entrega rápida</div><div class="stat-label">Cumplimos con los<br>tiempos acordados</div></div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">🤝</span>
+      <div><div class="stat-num">Atención</div><div class="stat-label">Personalizada<br>Nos adaptamos a tus necesidades</div></div>
+    </div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span>Explorar</span></div>
+  <div class="hero-scroll"></div>
 </section>
 
 <!-- PROMO -->
@@ -545,7 +589,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#inicio" class="nav-logo">Fortaleza <span>Lavandería</span></a>
+      <a href="#inicio"><img src="logo.png" class="nav-logo-img" alt="Lavandería Fortaleza"></a>
       <p>Servicio profesional de lavado, secado y planchado en Ate, Lima. Empresa formalizada, maquinaria moderna y precios accesibles desde 2021.</p>
     </div>
     <div class="footer-col">
