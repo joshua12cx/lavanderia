@@ -47,7 +47,7 @@
 
   /* HERO */
   .hero {
-    min-height: calc(100vh - 0px);
+    min-height: 100vh;
     background: #ffffff;
     display: flex; flex-direction: column; justify-content: center;
     position: relative; overflow: hidden; padding: 5rem 0 0;
@@ -68,7 +68,7 @@
     z-index: 1;
     pointer-events: none;
   }
-  .hero-main { display: flex; align-items: center; gap: 0; flex: 1; padding: 1.5rem 5% 1rem; position: relative; z-index: 2; min-height: calc(100vh - 160px); }
+  .hero-main { display: flex; align-items: center; gap: 0; flex: 1; padding: 1.5rem 5% 6rem; position: relative; z-index: 2; }
   .hero-content { position: relative; z-index: 2; flex: 0 0 46%; animation: fadeUp 1s ease both; }
   .hero-image-wrap { display: none; }
   .hero-logo-corner {
@@ -97,10 +97,14 @@
 
   /* STATS BAR */
   .hero-stats-bar {
-    background: #f0f4f5; border-top: 1px solid #dde8ea;
-    padding: 1.6rem 5%; display: flex; gap: 0;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid #dde8ea;
+    padding: 1.2rem 5%; display: flex; gap: 0;
+    z-index: 3;
     animation: fadeUp 1s 0.4s ease both;
-    margin: 0 -5%;
   }
   .stat-item {
     flex: 1; display: flex; align-items: flex-start; gap: 14px;
