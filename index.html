@@ -32,7 +32,11 @@
     border-bottom: 1px solid rgba(255,255,255,0.15);
     transition: padding 0.3s;
   }
-  .nav-logo-img { height: 54px; width: auto; object-fit: contain; }
+  .nav-logo-img { height: 64px; width: auto; object-fit: contain; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-brand-text { display: flex; flex-direction: column; }
+  .nav-brand-title { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #ffffff; line-height: 1.1; letter-spacing: 0.02em; }
+  .nav-brand-sub { font-size: 0.62rem; color: rgba(255,255,255,0.75); letter-spacing: 0.12em; text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: #ffffff; }
@@ -295,7 +299,13 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#inicio"><img src="logo.png" class="nav-logo-img" alt="Lavandería Fortaleza"></a>
+  <a href="#inicio" class="nav-brand">
+    <img src="logo.png" class="nav-logo-img" alt="Lavandería Fortaleza">
+    <div class="nav-brand-text">
+      <span class="nav-brand-title">LAVANDERÍA<br>FORTALEZA</span>
+      <span class="nav-brand-sub">Limpieza y cuidado profesional</span>
+    </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#mision">Nosotros</a></li>
     <li><a href="#servicios">Servicios</a></li>
@@ -616,7 +626,13 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#inicio"><img src="logo.png" class="nav-logo-img" alt="Lavandería Fortaleza"></a>
+      <a href="#inicio" class="nav-brand">
+    <img src="logo.png" class="nav-logo-img" alt="Lavandería Fortaleza">
+    <div class="nav-brand-text">
+      <span class="nav-brand-title">LAVANDERÍA<br>FORTALEZA</span>
+      <span class="nav-brand-sub">Limpieza y cuidado profesional</span>
+    </div>
+  </a>
       <p>Servicio profesional de lavado, secado y planchado en Ate, Lima. Empresa formalizada, maquinaria moderna y precios accesibles desde 2021.</p>
     </div>
     <div class="footer-col">
