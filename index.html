@@ -164,14 +164,13 @@
   .mv-section .section-title { color: var(--white); }
   .mv-section .section-tag { color: var(--gold); }
   .mv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; position: relative; z-index: 2; }
-  .mv-card { background: rgba(255,255,255,0.25); border: 1px solid rgba(10,80,90,0.2); border-radius: 2px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: border-color 0.3s, background 0.3s; }
-  .mv-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #a8eef5; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-  .mv-card:hover { border-color: rgba(10,80,90,0.4); background: rgba(255,255,255,0.4); }
-  .mv-card:hover::after { transform: scaleX(1); }
-  .mv-icon-wrap { width: 52px; height: 52px; background: rgba(10,80,90,0.1); border: 1px solid rgba(10,80,90,0.25); border-radius: 2px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .mv-card { background: #ffffff; border: 1px solid rgba(255,255,255,0.3); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .mv-card::after { content: '🫧'; position: absolute; bottom: 1rem; right: 1.2rem; font-size: 1.4rem; opacity: 0.3; }
+  .mv-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+  .mv-icon-wrap { width: 52px; height: 52px; background: rgba(10,80,90,0.08); border: 1px solid rgba(10,80,90,0.15); border-radius: 2px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
   .mv-icon { font-size: 1.5rem; }
-  .mv-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #0d3d45; margin-bottom: 1rem; letter-spacing: 0.03em; }
-  .mv-card p { font-size: 0.88rem; color: rgba(5,40,50,0.8); line-height: 1.85; }
+  .mv-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #0a505a; margin-bottom: 1rem; letter-spacing: 0.03em; }
+  .mv-card p { font-size: 0.88rem; color: #3a5a62; line-height: 1.85; padding-left: 1rem; border-left: 3px solid #e0fbfc; }
 
   /* SERVICES */
   .services-section { background: #e0fbfc; }
