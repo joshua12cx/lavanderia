@@ -84,19 +84,22 @@
 
   /* STATS BAR */
   .hero-stats-bar {
-    background: #f4fdfe; border-top: 1px solid #d0f0f5;
-    padding: 1.4rem 0; display: flex; gap: 0;
+    background: #f0f4f5; border-top: 1px solid #dde8ea;
+    padding: 1.6rem 5%; display: flex; gap: 0;
     animation: fadeUp 1s 0.4s ease both;
+    margin: 0 -5%;
   }
   .stat-item {
-    flex: 1; display: flex; align-items: center; gap: 12px;
-    padding: 0 2rem; border-right: 1px solid #d0f0f5;
+    flex: 1; display: flex; align-items: flex-start; gap: 14px;
+    padding: 0 2rem; border-right: 1px solid #dde8ea;
     text-align: left;
   }
   .stat-item:last-child { border-right: none; }
-  .stat-icon { font-size: 1.6rem; flex-shrink: 0; }
-  .stat-num { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a2e35; line-height: 1.2; }
-  .stat-label { font-size: 0.75rem; color: #4a6a72; line-height: 1.4; }
+  .stat-icon-wrap { width: 46px; height: 46px; border-radius: 50%; border: 2px solid #1a9aaa; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 9px; margin-top: 2px; }
+  .stat-icon-wrap svg { width: 22px; height: 22px; }
+  .stat-num { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 800; color: #1a2e35; line-height: 1.3; letter-spacing: 0.02em; }
+  .stat-sublabel { font-size: 0.8rem; font-weight: 700; color: #1a2e35; line-height: 1.2; margin-bottom: 3px; }
+  .stat-label { font-size: 0.72rem; color: #5a7a82; line-height: 1.5; }
   .hero-scroll { display: none; }
   .hero-grid { display: none; }
   .hero-logo-bg { display: none; }
@@ -337,20 +340,44 @@
   </div>
   <div class="hero-stats-bar">
     <div class="stat-item">
-      <span class="stat-icon">⭐</span>
-      <div><div class="stat-num">3+ Años</div><div class="stat-label">de experiencia<br>Comprometidos con la calidad</div></div>
+      <div class="stat-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">3+ AÑOS</div>
+        <div class="stat-sublabel">DE EXPERIENCIA</div>
+        <div class="stat-label">Comprometidos con<br>la calidad y el cuidado.</div>
+      </div>
     </div>
     <div class="stat-item">
-      <span class="stat-icon">✅</span>
-      <div><div class="stat-num">100%</div><div class="stat-label">Empresa formalizada<br>Servicio confiable y profesional</div></div>
+      <div class="stat-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-sublabel">EMPRESA FORMALIZADA</div>
+        <div class="stat-label">Servicio confiable,<br>seguro y profesional.</div>
+      </div>
     </div>
     <div class="stat-item">
-      <span class="stat-icon">⚡</span>
-      <div><div class="stat-num">Entrega rápida</div><div class="stat-label">Cumplimos con los<br>tiempos acordados</div></div>
+      <div class="stat-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">ENTREGA RÁPIDA</div>
+        <div class="stat-sublabel">&nbsp;</div>
+        <div class="stat-label">Cumplimos con los<br>tiempos acordados.</div>
+      </div>
     </div>
     <div class="stat-item">
-      <span class="stat-icon">🤝</span>
-      <div><div class="stat-num">Atención</div><div class="stat-label">Personalizada<br>Nos adaptamos a tus necesidades</div></div>
+      <div class="stat-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div>
+        <div class="stat-num">ATENCIÓN</div>
+        <div class="stat-sublabel">PERSONALIZADA</div>
+        <div class="stat-label">Nos adaptamos a tus<br>necesidades.</div>
+      </div>
     </div>
   </div>
   <div class="hero-scroll"></div>
